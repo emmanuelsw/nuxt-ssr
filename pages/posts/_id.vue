@@ -1,8 +1,8 @@
 
 <template>
   <div class="container">
-    <h1>{{ post.title }}</h1>
-    <pre>{{ post.body }}</pre>
+    <h1>{{ post.name }}</h1>
+    <pre>{{ post.email }}</pre>
     <p><nuxt-link to="/posts">Back to the list</nuxt-link></p>
   </div>
 </template>
@@ -13,12 +13,12 @@ import axios from 'axios'
 export default {
   async asyncData({ params }) {
     // We can use async/await ES6 feature
-    const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
-    return { post: data }
+    const { data } = await axios.get(`https://signs-app.herokuapp.com/api/signs/${params.id}`)
+    return { post: data.sign }
   },
   head() {
     return {
-      title: this.post.title
+      title: this.post.name
     }
   }
 }
@@ -44,9 +44,11 @@ ul li a {
   color: gray;
 }
 p {
+  padding-top: 15px;
   font-size: 20px;
 }
 a {
   color: #41B883;
+  text-decoration: none;
 }
 </style>

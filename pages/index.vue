@@ -24,8 +24,10 @@ export default {
 }
 p {
   font-size: 20px;
+  padding-top: 10px;
 }
 a {
   color: #41B883;
+  text-decoration: none;
 }
 </style>

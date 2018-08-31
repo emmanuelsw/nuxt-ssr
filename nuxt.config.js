@@ -1,12 +1,11 @@
 export default {
-  loading: {
-    color: '#4FC08D',
-    failedColor: '#bf5050',
-    duration: 1500
-  },
+  loading: false,
   head: {
-    title: 'Default title'
+    title: 'Nuxt Test'
   },
+  css: [
+    '~/css/main.css'
+  ],
   generate: {
     routes: [
       '/posts/1'
